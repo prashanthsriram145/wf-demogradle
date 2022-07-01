@@ -1,0 +1,18 @@
+task skipInProd {
+    onlyIf { !project.hasProperty('env') || project.env != 'prod'}
+
+    doLast {
+        println "skipInProd Task execution complete"
+    }
+}
+
+task skipInTest {
+    enabled = !project.hasProperty('env') || project.env != 'test'
+
+    doLast {
+        println "skipInTest task execution complete"
+    }
+
+
+}
+defaultTasks('skipInProd', 'skipInTest')
