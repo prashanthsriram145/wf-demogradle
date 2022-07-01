@@ -1,0 +1,17 @@
+task archiveTask(type : Zip) {
+    archiveName = "myZipFile.zip"
+    from(files("$buildDir/src"))
+    destinationDir = file("$buildDir/dist")
+}
+
+task copyTask(type: Copy) {
+    from("/src/main/java")
+    into("$buildDir/src")
+}
+
+task clean(type: Exec) {
+    commandLine 'rm' , './build/dist'
+}
+
+archiveTask.dependsOn  'copyTask'
+//copyTask.dependsOn 'clean'
