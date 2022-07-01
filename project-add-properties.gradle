@@ -1,0 +1,9 @@
+project.description("Hello World Project")
+println "Project description ${project.description}"
+
+ext {
+    outputLang = "English"
+}
+ext.environment = "local"
+println "Output Language : ${ext.outputLang}"
+println "Environment : ${environment}"
