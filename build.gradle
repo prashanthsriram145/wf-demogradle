@@ -2,6 +2,12 @@ plugins {
 	id 'org.springframework.boot' version '2.7.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'war'
+	id "net.bdavies.embedded-tomcat" version "0.0.2"
+}
+
+jar {
+	archiveName("custom-gradle.jar")
 }
 
 group = 'com.example'
