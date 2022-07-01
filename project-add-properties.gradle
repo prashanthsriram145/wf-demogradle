@@ -7,3 +7,23 @@ ext {
 ext.environment = "local"
 println "Output Language : ${ext.outputLang}"
 println "Environment : ${environment}"
+
+task displayProperties {
+    description = "Task to display properties"
+
+    ext {
+        taskprop1 = "prop val"
+    }
+
+    doFirst {
+        println "Project description ${project.description}"
+        println "Task name $name"
+        println "Task description : $description"
+    }
+
+    doLast {
+        println "Task property : $taskprop1"
+    }
+
+    defaultTasks("displayProperties")
+}
